@@ -1,0 +1,409 @@
+/* General */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	background-color: white;
+	margin: 0 0 10px 0;
+	padding: 0;
+	font: 10px/10px helvetica;
+}
+
+img {
+	border: none;
+}
+
+div.clear {
+	clear: both;
+}
+
+.emoticon {
+	margin-top: 3px;
+}
+
+/* Topic */
+
+div#topic-wrapper {
+	position: absolute;
+	width: 100%;
+	top: -500px;
+	min-height: 25px;
+	background: #C9D0DC url(../images/topic-bg.png) left bottom repeat-x;
+	overflow: visible;
+	border-bottom: 1px solid #9D9D9D;
+}
+div#topic-wrapper div#bookmark {
+	float: left;
+	width: 36px;
+	margin: 1px 4px 0 5px;
+}
+div#topic-wrapper div#picture {
+	display: none;
+}
+div#topic-wrapper div#topic {
+	line-height: 20px;
+	color: #424242;
+	font: 12px/22px "Lucida Grande", Verdana, Arial, sans-serif;
+	text-shadow: #E2E6EC 0 1px 1px;
+	font-weight: bold;
+	display: block;
+	margin-left: 45px;
+}
+div#topic-wrapper div#topic a {
+	text-decoration: underline;
+	color: #424242;
+}
+div#topic-wrapper div#topic a:hover {
+	text-decoration: underline;
+	color: white;
+	text-shadow: none;
+}
+div#topic-wrapper div#topic-text {
+	line-height: 19px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	margin-right: 15px;
+	border: none;
+}
+div#topic-wrapper div#topic-text img {
+	vertical-align: middle;
+}
+div#topic-wrapper span.topic-editing {
+	background-color: white;
+	color: black;
+	font-size: 11px;
+	font-weight: normal;
+	text-shadow: none;
+	padding: 1px 3px 2px 3px;
+	line-height: 23px;
+}
+div#topic-wrapper span.topic-editing a {
+	color: black !important;
+}
+
+/* Alerts */
+
+#alerts-wrapper {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #9D9D9D;
+}
+.erroricon {
+	background-image: url(../images/alerticon.png);
+}
+.warningicon {
+	background-image: url(../images/alerticon.png);
+}
+.notificationicon {
+	background-image: url(../images/notificationicon.png);
+}
+.alert {
+	width: 100%;
+	padding: 6px;
+	background-color: transparent;
+	font: 11px/14px "LucidaGrande", Helvetica, sans-serif;
+	background-position: 15px 5px;
+	background-repeat: no-repeat;
+}
+.alert-updown {
+	width: 100%;
+	background-color: #FFFFCC;
+	background-image: url(../images/alert_bg.png);
+	background-position: bottom left;
+	background-repeat: repeat-x;
+}
+.alert-message {
+	margin-top: 0px;
+	margin-left: 19px;
+}
+.alert-close {
+	height: 16px;
+	display: inline;
+	cursor: pointer;
+}
+.alert-close img {
+	float: right;
+	margin-top: 6px;
+	margin-right: 10px;
+}
+.alert-content {
+	padding-right: 40px;
+	padding-left: 21px;
+}
+.alert-separator {
+	height: 1px;
+	width: 100%;
+	display: block;
+	background-color: #FFFFCC;
+	clear: both;
+}
+.alert-start {
+	display: block;
+	clear: both;
+}
+.alert-aux-button {
+	float: right;
+	height: 16px;
+	margin-top: 6px;
+	margin-right: 6px;
+	background: transparent url(../images/button_left.png) top left no-repeat;
+	padding-left: 6px;
+}
+.alert-aux-button a {
+	display: block;
+	font: 9px/16px "Lucida Grande", Verdana, Arial, sans-serif;
+	font-weight: bold;
+	color: #666666;
+	text-decoration: none;
+	padding-right: 6px;
+	background: transparent url(../images/button_right.png) top right no-repeat;
+}
+
+/* Modern chatstyle */
+
+div#Chat {
+	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
+}
+div#Chat p {
+	font-size: 11px;
+
+	padding: 0;
+	color: black;
+}
+div#Chat div.context,
+div#Chat div.content {
+	clear: both;
+	padding: 7px 10px;
+	overflow:auto;
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-delay: 0s; 
+	-webkit-animation-duration: 0.9s;
+}
+div#Chat div.buddy-icon {
+	float: left;
+	line-height: 1px;
+}
+div#Chat div.buddy-icon img {
+	width: 30px;
+	-webkit-border-radius: 4px;
+	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+}
+div#Chat div.message {
+	position:relative;
+	margin: 0 0 0 43px;
+	padding: 3px 6px;
+	line-height: 18px;
+	border: 1px solid #62A9DF;
+	-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.25);
+	-webkit-border-radius: 5px;
+	border-radiusadius: 5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c2e0fd)
+		, color-stop(2%, #d9ebfd), color-stop(50%, #d9ebfd));
+	text-shadow: 1px 1px 1px #fff;
+}
+div#Chat div.message div.message-speech {
+	width:9px;
+	height:14px;
+	position:absolute;
+	top: 5px;
+	left: -9px;
+	background: transparent url(../images/message-top.png) no-repeat top left;
+}
+div#Chat div.outgoing div.message {
+	border-color: #9F9F9F;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
+		, color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
+}
+div#Chat div.outgoing div.message div.message-speech {
+	background-image: url(../images/message-top-outgoing.png);
+}
+div#Chat div.message .message-item {
+}
+div#Chat div.message div.next {
+	border-top: 1px solid #9FD4FE;
+	margin-top: 3px;
+	padding-top: 3px;
+}
+div#Chat div.outgoing div.next {
+	border-top-color: #C9C9C9;
+}
+div#Chat div.message .message-meta {
+	float:right;
+	color: #62BEF1;
+}
+div#Chat div.outgoing div.message-meta {
+	color: #AFAFAF;
+}
+div#Chat div.message .message-meta a{
+	color: inherit;
+	text-decoration: none;
+}
+div#Chat div p a {
+	color: #0066FF;
+	text-decoration: none;
+}
+div#Chat div p a:hover {
+	color: #0033FF;
+	border-bottom: 1px dotted #0033FF;
+	text-decoration: none;
+}
+div#Chat div p a:visited {
+	color: #CC0000;
+	text-decoration: none;
+}
+div#Chat div p a:visited:hover {
+	color: #CC0000;
+	border-bottom: 1px dotted #CC0000;
+	text-decoration: none;
+}
+div#Chat div p a:visited:before {
+	content:"\2713";
+}
+div#Chat div.emote {
+	text-align: center;
+	margin: 5px 10px 5px 10px;
+	/* border-bottom: 1px dotted #BEBEBE; */
+	margin-top: 17px;
+}
+div#Chat div.emote {
+	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
+}
+div#Chat div.emote p {
+	margin: -4px 0 -5px 0;
+}
+div#Chat div.emote b {
+	font: 9px "Helvetica";
+	font-weight: normal;
+	color: #B0B0B0;
+}
+div#Chat div.status,
+div#Chat div.flow {
+	clear:both;
+	position:relative;
+	margin: 7px 10px;
+	padding: 3px 6px;
+	overflow:auto;
+	line-height: 18px;
+	border: 1px solid #E1C843;
+	-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.25);
+	-webkit-border-radius: 5px;
+	border-radiusadius: 5px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
+		, color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
+	text-shadow: 1px 1px 1px #fff;
+	-webkit-animation-name: fadeIn;
+	-webkit-animation-delay: 0s; 
+	-webkit-animation-duration: 0.9s;
+	
+}
+div#Chat div.status div.status-meta,
+div#Chat div.flow div.flow-meta {
+	float:right;
+	color: #BCC409;
+}
+
+
+div#Chat div.service {
+	background: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#adadad));
+	border-bottom: 1px solid #777;
+	padding: 1px 20px;
+	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
+}
+
+div#Chat div.context p {
+	color: #00387C;
+}
+div#Chat div.context.outgoing p {
+	color: #383838;
+}
+
+
+div#Chat div.context.followup div.message-head {
+	background-color: white !important;
+}
+
+div#Chat div p img {
+	margin-top: 3px;
+}
+
+/* SMS Styles */
+
+div#Chat div.sms div.message-head {
+	margin-right: 30px;
+}
+div#Chat div.sms div.message-status {
+	float: right;
+	width: 20px;
+	height: 16px;
+	margin-top: -16px;
+	text-align: center;
+}
+div#Chat div.sms div.message-head span.date a {
+	color: #3366FF !important;
+	text-decoration: none;
+}
+div#Chat div.sms div.message-head span.date a:hover {
+	border-bottom: 1px dotted #0033FF;
+	text-decoration: none;
+}
+div#Chat div.message-head span.recipient {
+	float: left;
+	display: block;
+	background: transparent url(../images/left_top.png) left top no-repeat;
+}
+div#Chat div.message-head span.recipient a {
+	background: transparent url(../images/left_bottom.png) left bottom no-repeat;
+	display: block;
+	padding-left: 10px;
+	color: #3E3E3E !important;
+	line-height: 15px;
+	text-decoration: none;
+}
+div#Chat div.sms-sub-message div.message-head {
+	background-color: #F0F0F0 !important;
+	margin-top: 0;
+}
+
+/* Alerts word highlight */
+
+span.highlight {
+	padding: 1px;
+	background: yellow;
+	display: inline !important;
+}
+
+/* BR hack */
+
+br {
+	display: none;
+}
+div#Chat > div br {
+	display: block;
+}
+div#Chat > div.emote br {
+	display: inline;
+}
+div#Chat > div.status br {
+	display: none;
+}
+div#Chat > div.status-holder br {
+	display: none;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0; 
+	}
+	30% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1; 
+		-webkit-animation-timing-function: ease-out;
+	}
+}
