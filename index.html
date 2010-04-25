@@ -1,0 +1,122 @@
+<!doctype html>
+
+<title>Simples Skype Chat Style</title>
+
+<style>
+* {
+  padding:0;
+  margin: 0;
+}
+body {
+  font: 13px/20px 'Helvetica Neue', Helvetica;
+  text-align: center;
+  background: #ddd;
+  color: #333;
+  text-shadow: 1px 1px 2px #fff;
+}
+h1,h2 {
+  font-weight: 200;
+  font-size: 3em;
+  line-height:1;
+}
+h1 span {
+  color: #777;
+}
+.byline {
+  font-style:italic;
+  padding: 4px 0 1em;
+}
+h2{
+    line-height:1.5;
+  font-size: 2em;
+  margin: .4em 0;
+}
+ol {
+  margin: 1em 0 2em;
+}
+li {
+  margin: 0 0 .4em;
+}
+code {
+  font-size: .9em;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+p img {
+  -webkit-box-shadow: 1px 1px 5px #666;
+  -moz-box-shadow: 1px 1px 5px #666;
+  box-shadow: 1px 1px 5px #666;
+  -webkit-animation-name: fadeIn;
+	-webkit-animation-delay: 0s; 
+	-webkit-animation-duration: 0.5s;
+}
+a:link,
+a:visited { color: #00f; text-decoration: none; border-bottom: 1px solid; }
+a:hover,
+a:active,
+a:focus { color: #f00; border-bottom: 1px dotted; outline:none;}
+#wrapper {
+  margin: 2em auto;
+  width: 600px;
+  text-align:left;
+}
+.copy {
+  text-align: center;
+  margin: 2em;
+}
+h1, h2, ol, p   {
+  -webkit-animation-name: fadeInAndLeft;
+	-webkit-animation-delay: 0s; 
+	-webkit-animation-duration: 0.5s;
+}
+
+@-webkit-keyframes fadeInAndLeft {
+	from {
+		opacity: 0; 
+		margin-left: -20em; 
+		-webkit-animation-timing-function: ease-out;
+	}
+	65% {
+		opacity: 0; 
+		margin-left: -5em;
+	}
+	100% {
+		opacity: 1; 
+		margin-left: 0;
+		-webkit-animation-timing-function: ease-out;
+	}
+}
+</style>
+
+<a href="http://github.com/edds/Simples.SkypeChatStyle"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+
+
+<div id="wrapper">
+  <h1>Simples <span>a Skype Chat Style</span></h1>
+  <p class="byline">by <a href="http://e26.co.uk" title="Master Developer">Edd Sowden</a></p>
+
+  <p>Fed up with the default Skype chat style? I decided to make my own, you can use it too.</p>
+
+  <h2>Installation Instructions</h2>
+
+  <ol>
+    <li><a href="http://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle.zip" title="Direct Download">Download</a> the latest <a href="/Simples.SkypeChatStyle">Simples.SkypeChatStyle</a> release</li>
+    <li>Copy the <code>Simples.SkypeChatStyle.zip</code> to <code>~/Library/Application Support/Skype/ChatStyles</code></li>
+    <li>Double click <code>Simples.SkypeChatStyle.zip</code> to extract it</li>
+    <li>Relaunch Skype so it detects the new chat style</li>
+  </ol>
+
+  <h2>Screen Shot</h2>
+  <p><img src="./screenshot.png" alt="screenshot"></p>
+  
+  <h2>Code</h2>
+  <p>
+    The code is heavily based on the 'Skype Modern Chat Style'. I have however, 
+    altered it to make use of the fact that the chat window is running a recent 
+    Webkit. As it has access to CSS3 features it seemed obvious to make use of them, 
+    such as animations, rounded corners and gradients.
+  </p>
+  
+  <p class="copy">&copy; 2010 <a href="http://e26.co.uk">Edd Sowden</a></p>
+</div>
