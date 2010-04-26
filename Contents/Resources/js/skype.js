@@ -597,8 +597,6 @@ function editMessage(messageID, editTime, editor, newBodyHtml, localizedEditedSt
 		//get a handle to the message html paragraph obj
 		var messages = chat.getElementsByTagName('p');
 		
-		if()
-		
 		//only do edit if we can set both datetime and message
 		if (datearea != undefined && messages != undefined && messages[0] != undefined) {
 			//set the new edited date area for the message
