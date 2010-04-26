@@ -586,6 +586,9 @@ function editMessage(messageID, editTime, editor, newBodyHtml, localizedEditedSt
 	//get a handle to the message html obj
 	var chat = chatDoc.getElementById(messageID);
 	
+	//we don't really need the date do we 
+	editTime = editTime.split(' ').pop();
+	
 	//check that we were able to find/get a handle to the chat object
 	if (chat != undefined) {
 		//get a handle to the date area span
@@ -594,10 +597,12 @@ function editMessage(messageID, editTime, editor, newBodyHtml, localizedEditedSt
 		//get a handle to the message html paragraph obj
 		var messages = chat.getElementsByTagName('p');
 		
+		if()
+		
 		//only do edit if we can set both datetime and message
 		if (datearea != undefined && messages != undefined && messages[0] != undefined) {
 			//set the new edited date area for the message
-			datearea[0].innerHTML = "<b> " + localizedEditedString + " " + editTime + " - " + editor + "</b>";
+			datearea[0].innerHTML = "<b> " + localizedEditedString + " " + editTime + "</b>";
 			
 			//check if the message was removed, changed to no text or updated with new content
 			if (newBodyHtml == "" || newBodyHtml == undefined) { //set the removed message
