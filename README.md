@@ -13,6 +13,7 @@ It utilises some of webkits new CSS3 which should make adding or changing any co
 2. Copy the `Simples.SkypeChatStyle.zip` to `~/Library/Application Support/Skype/ChatStyles`
 3. Double click `Simples.SkypeChatStyle.zip` to extract it
 4. Relaunch Skype so it detects the new chat style
+5. Select the Simples style from the Skype 'Chat' preferences 
 
 [download]: http://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle.zip
 [Homepage]: http://edds.github.com/Simples.SkypeChatStyle/ "The homepage"
