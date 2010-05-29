@@ -164,18 +164,16 @@ div#topic-wrapper span.topic-editing a {
 	background: transparent url(../images/button_right.png) top right no-repeat;
 }
 
-/* Modern chatstyle */
-
 div#Chat {
 	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
 }
 div#Chat p {
 	font-size: 11px;
-
 	padding: 0;
 	color: black;
 }
 div#Chat div.message-block {
+  position:relative;
 	clear: both;
 	padding: 7px 10px;
 	overflow:auto;
@@ -197,7 +195,7 @@ div#Chat div.message {
 	margin: 0 0 0 43px;
 	padding: 3px 6px;
 	line-height: 18px;
-	overflow:auto;
+  overflow:auto;
 	border: 1px solid #62A9DF;
 	-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.25);
 	-webkit-border-radius: 5px;
@@ -206,12 +204,13 @@ div#Chat div.message {
 		, color-stop(2%, #d9ebfd), color-stop(50%, #d9ebfd));
 	text-shadow: 1px 1px 1px #fff;
 }
-div#Chat div.message div.message-speech {
+div#Chat div.message-speech {
 	width:9px;
 	height:14px;
 	position:absolute;
-	top: 5px;
-	left: -9px;
+	top: 15px;
+	left: 45px;
+	z-index:2;
 	background: transparent url(../images/message-top.png) no-repeat top left;
 }
 div#Chat div.outgoing div.message {
@@ -219,7 +218,7 @@ div#Chat div.outgoing div.message {
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
 		, color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
 }
-div#Chat div.outgoing div.message div.message-speech {
+div#Chat div.outgoing div.message-speech {
 	background-image: url(../images/message-top-outgoing.png);
 }
 div#Chat div.message .message-item {
