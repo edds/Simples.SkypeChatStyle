@@ -1,19 +1,15 @@
-<div class="sms outgoing content">
-    <div class="message-head">
-        <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> </span>
-        <span class="date"><b> Pending</b></span>
-        <div class="clear"></div>
+<div class="outgoing message-block">
+  <div class="buddy-icon"><img src="%userIconPath%" class="avatar"/></div>
+  <div class="message">
+    <div class="message-speech"></div>
+    <div class="message-item">
+      <div class="message-meta">
+        <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+        <span class="date">Pending</span>
+      </div>
+      <p class="content">%message%</p>
+	    %recipientStatus%
     </div>
-    <div class="message-status">
-        <img src="images/status_pending.gif" width="16" height="16" alt="" title="" />
-    </div>
-
-	<div class="clear"></div>
-
-	%recipientStatus%
-
-    <div class="clear"></div>
-    
-	<p>%message%</p>
+  </div>
 </div>
 <div id="insert"></div>

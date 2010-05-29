@@ -19,8 +19,8 @@ onload = function() {
     bookmarkPin = topicDoc.getElementById("bookmark-pin");
     isEditing = false;
     canChangeTopicOption = false;
-	resizeInProcess = false;
-	isPublicChat = false;
+  resizeInProcess = false;
+  isPublicChat = false;
 }
 
 onresize = function() {
@@ -63,7 +63,7 @@ function appendMessage(html, messageID) {
     return "OK";
 }
 
-function appendMessageNoScroll(html, messageID) {	
+function appendMessageNoScroll(html, messageID) { 
     var insert = chatDoc.getElementById("insert");
     if (insert) insert.parentNode.removeChild(insert);
     
@@ -82,8 +82,8 @@ function _createMessage(html, messageID){
     range.selectNode(chat);
     var documentFragment = range.createContextualFragment(html);
 
-	if(!messageID) var messageID = randomString();
-	documentFragment.childNodes[0].id = messageID;
+  if(!messageID) var messageID = randomString();
+  documentFragment.childNodes[0].id = messageID;
     
     return documentFragment;
 }
@@ -106,8 +106,8 @@ function appendNextMessageNoScroll(html, messageID){
     range.selectNode(insert.parentNode);
     var newNode = range.createContextualFragment(html);
 
-	if(!messageID) var messageID = randomString();
-	newNode.childNodes[0].id = messageID;
+  if(!messageID) var messageID = randomString();
+  newNode.childNodes[0].id = messageID;
     
     insert.parentNode.replaceChild(newNode,insert);
     
@@ -152,40 +152,38 @@ function scrollToBottom() {
     scrollInterval = null;
     scrollStep = 15;
   }
-//	chatDoc.body.scrollTop = chatDoc.body.offsetHeight;
+//  chatDoc.body.scrollTop = chatDoc.body.offsetHeight;
 }
 
 /* Message status change */
 
 function setMessageStatus(messageID, status, additionalText) {
-	var statusChanged = false;
-	var statusTextChanged = false;
-	if(!additionalText || additionalText == "") { additionalText = "&nbsp;"; }
-    messageElement = chatDoc.getElementById(messageID);
-    
-    if (messageElement) {    
-		var divsInside = messageElement.getElementsByTagName('*');
-		for(var i = 0; i < divsInside.length; i++) {
-			var divClass = divsInside[i].className;
-			if(divClass == "message-status") { 
-				statusSrcOld = divsInside[i].childNodes[1].src;
-				ststusSrcNew = statusSrcOld.replace(/status_[a-z]+./, "status_" + status + ".");
-				if(status == "pending") { ststusSrcNew = ststusSrcNew.replace(/.png/, ".gif" );} else { ststusSrcNew = ststusSrcNew.replace(/.gif/, ".png" ); }
-				divsInside[i].childNodes[1].src = ststusSrcNew;
-				statusChanged = true;
-			}
-			if(divClass == "date") {
-				divsInside[i].innerHTML = "<b>" +additionalText+ "</b>";
-				statusTextChanged = true;
-			}
-		}    
-		if(statusChanged || statusTextChanged) 
-			return "OK";   
-		else
-			return "COULDNOTCHANGEANYELEMENT";
-	}
-	else
-		return "CANNOTFINDMESSAGE";
+  var statusChanged = false;
+  if(!additionalText || additionalText == "") { 
+    additionalText = "&nbsp;"; 
+  } else {
+    //we don't really need the date do we 
+  	additionalText = additionalText.split(' ').pop();  
+  }
+  messageElement = chatDoc.getElementById(messageID);
+  	  
+  if (messageElement) {    
+    var divsInside = messageElement.getElementsByTagName('*');
+    for(var i = 0; i < divsInside.length; i++) {
+      var divClass = divsInside[i].className;
+      if(divClass == "date") {
+        divsInside[i].innerHTML = "<b>" +additionalText+ "</b>";
+        statusChanged = true;
+      }
+    }    
+    if(statusChanged){
+      return "OK";   
+    } else {
+      return "COULDNOTCHANGEANYELEMENT";
+    }
+  } else {
+    return "CANNOTFINDMESSAGE";
+  }
 }
 
 
@@ -194,19 +192,19 @@ function setMessageStatus(messageID, status, additionalText) {
 function setMessageEditable(messageID, isEditable) {
     messageElement = chatDoc.getElementById(messageID);
     if (messageElement) {  
-    	var paraGraphs = messageElement.getElementsByTagName("P");
-    	if (paraGraphs) {
-    		var paraGraph = paraGraphs[0];
-    		if (isEditable) {
-    			paraGraph.contentEditable = "true";
-    			paraGraph.style.outline = "none";
-    		}
-    		else {
-    			paraGraph.contentEditable = "false";
-    			paraGraph.style.outline = "";
-    		}
-    		return "OK";
-    	}
+      var paraGraphs = messageElement.getElementsByTagName("P");
+      if (paraGraphs) {
+        var paraGraph = paraGraphs[0];
+        if (isEditable) {
+          paraGraph.contentEditable = "true";
+          paraGraph.style.outline = "none";
+        }
+        else {
+          paraGraph.contentEditable = "false";
+          paraGraph.style.outline = "";
+        }
+        return "OK";
+      }
     }
     return "CANNOTFINDMESSAGE";
 }
@@ -266,27 +264,27 @@ function setAlert(newalert, messageID, severity, hasCloseButton, AuxButtonTitle,
         initHovers(alertDoc);
     }
 
-	return "OK";
+  return "OK";
 }
 
 function closeAlertboxCall(e, messageID) {
 
-	//detect if alt modifier was used, if so call on all, else on specified messageID
-	var keycode;
-	if (window.event) {
-		keycode = window.event.keyCode;
-	} else if (e) {
-		keycode = e.which;
-	}
-	
+  //detect if alt modifier was used, if so call on all, else on specified messageID
+  var keycode;
+  if (window.event) {
+    keycode = window.event.keyCode;
+  } else if (e) {
+    keycode = e.which;
+  }
+  
     var e = e || window.event;
     
-	if(e.altKey && displayController.closeAllAlertsJSCallback){
-		displayController.closeAllAlertsJSCallback();
+  if(e.altKey && displayController.closeAllAlertsJSCallback){
+    displayController.closeAllAlertsJSCallback();
     } else {
-		displayController.closeAlertJSCallback_(messageID);
-	}
-	
+    displayController.closeAlertJSCallback_(messageID);
+  }
+  
     return "OK";
 }
 
@@ -343,9 +341,9 @@ function setTopic(html, rawText, doSlide) {
     
     if(html && html.length > 0) {
         if(topicTextArea && topicElement) {
-			topicTextArea.innerHTML = "";
+      topicTextArea.innerHTML = "";
             topicTextArea.innerHTML = html;
-			topicFrameHeight = 0;
+      topicFrameHeight = 0;
             topicZeroCorner = 0 - topicElement.offsetHeight;
             topicFrameHeight = topicElement.offsetHeight - 1;
         } else {
@@ -358,7 +356,7 @@ function setTopic(html, rawText, doSlide) {
             var alertFrameHeight = 0;
         }
 
-    	resizeInProcess = true;
+      resizeInProcess = true;
 
         this.document.getElementById("SkypeFrameset").rows = topicFrameHeight + "," + alertFrameHeight + ",*";
     
@@ -368,20 +366,20 @@ function setTopic(html, rawText, doSlide) {
             moveElement("topic-wrapper", topicZeroCorner, 1);
         }
 
-		resizeTimeout = setTimeout("resizeInProcess = false;", 1000);
+    resizeTimeout = setTimeout("resizeInProcess = false;", 1000);
     } else {
         if(alertsElement && alertsElement.offsetHeight > 10) {
-            var alertFrameHeight = alertsElement.offsetHeight;	
+            var alertFrameHeight = alertsElement.offsetHeight;  
         } else {
             var alertFrameHeight = 0;
         }
 
-		resizeInProcess = true;
+    resizeInProcess = true;
         
         this.document.getElementById("SkypeFrameset").rows =  "0," + alertFrameHeight + ",*";
         topicElement.style.top = -500 + "px";
-		
-		resizeTimeout = setTimeout("resizeInProcess = false;",1000);
+    
+    resizeTimeout = setTimeout("resizeInProcess = false;",1000);
     }
     
     return "OK";
@@ -412,7 +410,7 @@ function editTopic(save) {
         newTopic = topicSpan.innerText;
         topicTextArea.removeEventListener("keydown", keyEvents, false);
         isEditing = false;
-	} else {
+  } else {
         if(!isEditing && canChangeTopicOption) {
             topicTextArea.innerHTML = "<div style=\"display: inline-block; border: 1px solid #9d9d9d; background: white; color: black; font-weight: normal; text-shadow: none; line-height: 15px; padding: 1px 3px;\"><div id=\"topic-span\" >" +rawTextTopic+ "</div></div>";
             topicSpan = topicDoc.getElementById("topic-span");
@@ -431,7 +429,7 @@ function setBookmarked(status) {
     if(status == "yes") {
         bookmarkPin.src = "images/bookmark-set.png";
         bookmarkPin.title = bookmarkTootlipUnset;
-        //bookmarkPin.onclick = "parent.setBookmarked(\"no\")";	// mihkel commented this line out
+        //bookmarkPin.onclick = "parent.setBookmarked(\"no\")"; // mihkel commented this line out
     } else {
         bookmarkPin.src = "images/bookmark-notset.png";
         bookmarkPin.title = bookmarkTootlipSet;
@@ -457,7 +455,7 @@ function initHovers(myFrame) {
                     img.h = new Image();
                     img.h.src = sh;
                     img.onmouseover = mouseOver;
-                    img.onmouseout	= mouseOut;
+                    img.onmouseout  = mouseOut;
                 }
             }
         }
@@ -479,36 +477,36 @@ function mouseOut() {
 
 /* Window resize handler */
 
-function resizeHandler(){	
-	if(resizeInProcess == true) {
-		resizeTimeout = setTimeout("resizeHandler()",1000);
-	} else {
-		clearTimeout(resizeTimeout);
-	
-		resizeInProcess = true;
-	
-	    if(topicElement && topicElement.style.top == "-1px") {
-	        var topicFrameHeight = topicElement.offsetHeight - 1;
-	    } else {
-	        var topicFrameHeight = 0;
-	    }
+function resizeHandler(){ 
+  if(resizeInProcess == true) {
+    resizeTimeout = setTimeout("resizeHandler()",1000);
+  } else {
+    clearTimeout(resizeTimeout);
+  
+    resizeInProcess = true;
+  
+      if(topicElement && topicElement.style.top == "-1px") {
+          var topicFrameHeight = topicElement.offsetHeight - 1;
+      } else {
+          var topicFrameHeight = 0;
+      }
     
-	    if(alertsElement && alertsElement.offsetHeight > 10) {
-	        var alertFrameHeight = alertsElement.offsetHeight;
-	    } else {
-	        var alertFrameHeight = 0;
-	    }
+      if(alertsElement && alertsElement.offsetHeight > 10) {
+          var alertFrameHeight = alertsElement.offsetHeight;
+      } else {
+          var alertFrameHeight = 0;
+      }
 
-	    if(topicFrameHeight || alertFrameHeight || topicFrameHeight == "0" || alertFrameHeight == "0") {
-	        document.getElementById("SkypeFrameset").rows =	 topicFrameHeight + "," + alertFrameHeight + ",*";	
-	    }
-		
-		resizeInProcess = false;
-		
-		if (alertFrameHeight) {
-			chatDoc.body.scrollTop = (chatDoc.body.offsetHeight + alertDoc.height);
-		}
-	}
+      if(topicFrameHeight || alertFrameHeight || topicFrameHeight == "0" || alertFrameHeight == "0") {
+          document.getElementById("SkypeFrameset").rows =  topicFrameHeight + "," + alertFrameHeight + ",*";  
+      }
+    
+    resizeInProcess = false;
+    
+    if (alertFrameHeight) {
+      chatDoc.body.scrollTop = (chatDoc.body.offsetHeight + alertDoc.height);
+    }
+  }
 }
 
 /* Set tooltips on load */
@@ -541,79 +539,79 @@ function changeMessageFont(fontStyle){
 }
 
 function setBackground(image, color) {
-	var chatBody = chatDoc.getElementById("Chat");
-    if(color) {	chatBody.style.backgroundColor = color; }
+  var chatBody = chatDoc.getElementById("Chat");
+    if(color) { chatBody.style.backgroundColor = color; }
     if(image) { chatBody.style.backgroundImage = image; }
 }
 
 
 /* set picture */
-function setPicture(picturePath) {	// if path evals to false then hide picture
+function setPicture(picturePath) {  // if path evals to false then hide picture
 
-	return "OK"; // currently non-operational
+  return "OK"; // currently non-operational
 
-	var picDiv = topicDoc.getElementById("picture");
-	var picImg = topicDoc.getElementById("chat-picture");
-	if (picturePath) {
-		picImg.src = picturePath;
-		picDiv.style.display='block';
-	
-	}
-	else {
-		picDiv.style.display='none';
-	}
-	return "OK";
+  var picDiv = topicDoc.getElementById("picture");
+  var picImg = topicDoc.getElementById("chat-picture");
+  if (picturePath) {
+    picImg.src = picturePath;
+    picDiv.style.display='block';
+  
+  }
+  else {
+    picDiv.style.display='none';
+  }
+  return "OK";
 }
 
 
-function setIsPublic(isPublic) {	// argument is string "true" or "false" 
-	isPublicChat = "true" == isPublic;
-	return "OK";
+function setIsPublic(isPublic) {  // argument is string "true" or "false" 
+  isPublicChat = "true" == isPublic;
+  return "OK";
 }
 
 
 /* change body of the message, also display editTime and editore in message header */
-function editMessage(messageID, editTime, editor, newBodyHtml, localizedEditedString, localizedRemovedString) {	
+function editMessage(messageID, editTime, editor, newBodyHtml, localizedEditedString, localizedRemovedString) { 
 // numeric message ID, string edit Time, string editorname, string newBodyHtml
 
-	//debug - leave in for ease of debug
+  //debug - leave in for ease of debug
     //alert("Message Edited: " + messageID );
-	//alert("New Message: " + newBodyHtml);
-	
-	//set a var to indicate whether a scroll should happen after edit.
-	var shouldScroll = nearBottom();
-	
-	//get a handle to the message html obj
-	var chat = chatDoc.getElementById(messageID);
-	
-	//we don't really need the date do we 
-	editTime = editTime.split(' ').pop();
-	
-	//check that we were able to find/get a handle to the chat object
-	if (chat != undefined) {
-		//get a handle to the date area span
-		var datearea = getElementsByClassName(chat, "span", "date");
-	
-		//get a handle to the message html paragraph obj
-		var messages = chat.getElementsByTagName('p');
-		
-		//only do edit if we can set both datetime and message
-		if (datearea != undefined && messages != undefined && messages[0] != undefined) {
-			//set the new edited date area for the message
-			datearea[0].innerHTML = "<b> " + localizedEditedString + " " + editTime + "</b>";
-			
-			//check if the message was removed, changed to no text or updated with new content
-			if (newBodyHtml == "" || newBodyHtml == undefined) { //set the removed message
-				messages[0].innerHTML = "<i>" + localizedRemovedString + "</i>";
-			} else { //update to the new copy
-				messages[0].innerHTML = newBodyHtml;
-			}
-			
-			//scroll to bottom if detected it should be done
-			if (shouldScroll) scrollToBottom();
-		}
-	}
-	return "OK";
+  //alert("New Message: " + newBodyHtml);
+  
+  //set a var to indicate whether a scroll should happen after edit.
+  var shouldScroll = nearBottom();
+  
+  //get a handle to the message html obj
+  var chat = chatDoc.getElementById(messageID);
+  
+  //we don't really need the date do we 
+  editTime = editTime.split(' ').pop();
+  
+  //check that we were able to find/get a handle to the chat object
+  if (chat != undefined) {
+    //get a handle to the date area span
+    var datearea = getElementsByClassName(chat, "span", "date");
+  
+    //get a handle to the message html paragraph obj
+    var messages = chat.getElementsByTagName('p');
+    
+    //only do edit if we can set both datetime and message
+    if (datearea != undefined && messages != undefined && messages[0] != undefined) {
+      //set the new edited date area for the message
+      datearea[0].innerHTML = "<b> " + localizedEditedString + " " + editTime + "</b>";
+      
+      //check if the message was removed, changed to no text or updated with new content
+      if (newBodyHtml == "" || newBodyHtml == undefined) { //set the removed message
+        messages[0].innerHTML = "<i>" + localizedRemovedString + "</i>";
+      } else { //update to the new copy
+        messages[0].innerHTML = newBodyHtml;
+      }
+      
+      //scroll to bottom if detected it should be done
+      if (shouldScroll) scrollToBottom();
+    }
+  }
+  return "OK";
 
 }
 
@@ -627,18 +625,18 @@ strClassName: The class name to search for - e.g. datedisplayclass or other clas
 
 */
 function getElementsByClassName(oElm, strTagName, strClassName){
-	var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
-	var arrReturnElements = new Array();
-	strClassName = strClassName.replace(/\-/g, "\\-");
-	var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$)");
-	var oElement;
-	for(var i=0; i<arrElements.length; i++){
-		oElement = arrElements[i];
-		if(oRegExp.test(oElement.className)){
-			arrReturnElements.push(oElement);
-		}
-	}
-	return (arrReturnElements)
+  var arrElements = (strTagName == "*" && oElm.all)? oElm.all : oElm.getElementsByTagName(strTagName);
+  var arrReturnElements = new Array();
+  strClassName = strClassName.replace(/\-/g, "\\-");
+  var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$)");
+  var oElement;
+  for(var i=0; i<arrElements.length; i++){
+    oElement = arrElements[i];
+    if(oRegExp.test(oElement.className)){
+      arrReturnElements.push(oElement);
+    }
+  }
+  return (arrReturnElements)
 }
 
 
