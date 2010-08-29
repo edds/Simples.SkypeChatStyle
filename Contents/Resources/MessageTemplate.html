@@ -3,10 +3,20 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" />
-</style>
 </head>
 <body>
-    <div id="Chat">
+  <div id="topic-wrapper">
+    <div id="picture"><img src="images/bookmark-notset.png" hsrc="images/bookmark-mouseover.png" width="96" height="96" id="chat-picture" alt="Picture" title="Picture" /></div>
+    <div id="bookmark"><a href="skypechatbookmark://chat"><img src="images/bookmark-notset.png" hsrc="images/bookmark-mouseover.png" width="36" height="24" id="bookmark-pin" alt="Bookmark" title="" /></a></div>
+    <div id="topic" ondblclick="parent.editTopic();" title="">
+      <div id="topic-text">
+      </div>
     </div>
+  </div>
+  
+  <div id="Chat"></div>
+  <pre id="console"></pre>
+  <script type="text/javascript" src="./js/jquery.1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/skype.js"></script>
 </body>
 </html>

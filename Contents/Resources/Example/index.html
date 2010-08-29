@@ -4,16 +4,104 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <title>Simples Frameset</title>
+        <script type="text/javascript" src="../js/jquery.1.4.2.min.js" defer="defer"></script>
         <script type="text/javascript" src="../js/skype.js" defer="defer"></script>
+        <link rel="stylesheet" href="../css/styles.css" type="text/css" media="screen" />
     </head>
-    <frameset name="mainFrame" id="SkypeFrameset" rows="0,0,*" frameborder="no" border="0" framespacing="0" frameborder="0">
-        <frame name="topicFrame" src="TopicTemplate.html" scrolling="no" noresize="noresize">
-        <frame name="alertFrame" src="AlertTemplate.html" scrolling="no" noresize="noresize">
-        <frame name="chatFrame" src="MessageTemplate.html">
-    </frameset>
-    <noframes>
-        <body>
-            <p>Simples Frameset</p>
-        </body>
-    </noframes>
+
+
+    <div id="Chat">
+
+    <div class="service" id="-27"> 
+      <p>View earlier messages: <a href="skypechatshowallmessages://1">1 Day</a> | <a href="skypechatshowallmessages://7">1 Week</a> | <a href="skypechatshowallmessages://14">2 Weeks</a> | <a href="skypechatshowallmessages://31">1 Month</a> | <a href="skypechatshowallmessages://92">3 Months</a> | <a href="skypechatshowallmessages://183">6 Months</a> | <a href="skypechatshowallmessages://366">1 Year</a> | <a href="skypechatshowallmessages://99999999">All</a></p>
+    </div>
+
+    <div class="incoming message-block">
+      <div class="buddy-icon"><img src="../Incoming/buddy_icon.png" class="avatar"/></div>
+      <div class="message-speech"></div>
+      <div class="message">
+        <div class="message-item">
+          <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+            <span class="date">12:32</span>
+          </div>
+          <p class="context">Something old. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="message-item next">
+          <div class="message-meta">
+            <span class="date">12:33</span>
+          </div>
+          <p class="context">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <div class="outgoing message-block">
+      <div class="buddy-icon"><img src="../Incoming/buddy_icon.png" class="avatar"/></div>
+      <div class="message-speech"></div>
+      <div class="message">
+        <div class="message-item">
+          <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+            <span class="date">12:34</span>
+          </div>
+          <p class="context">Something old. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="outgoing message-block">
+      <div class="buddy-icon"><img src="../Incoming/buddy_icon.png" class="avatar"/></div>
+      <div class="message-speech"></div>
+      <div class="message">
+        <div class="message-item">
+          <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+            <span class="date">12:32</span>
+          </div>
+          <p class="context">Something new. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <div class="message-item next">
+          <div class="message-meta">
+            <span class="date">12:33</span>
+          </div>
+          <p class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <div class="incoming message-block">
+      <div class="buddy-icon"><img src="../Incoming/buddy_icon.png" class="avatar"/></div>
+      <div class="message-speech"></div>
+      <div class="message">
+        <div class="message-item">
+          <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+            <span class="date">12:34</span>
+          </div>
+          <p class="content">Something new. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="outgoing message-block">
+      <div class="buddy-icon"><img src="../Incoming/buddy_icon.png" class="avatar"/></div>
+      <div class="message-speech"></div>
+      <div class="message">
+        <div class="message-item">
+          <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%senderScreenName%">%sender%</a> &mdash;</span>
+            <span class="date">Pending</span>
+          </div>
+    	    <p>This is an sms message.</p>
+    	    <div class="message-meta">
+            <span class="sender"><a href="skypechatcontact://%reciverScreenName%">%reciver%</a> &mdash;</span>
+            <span class="date">Pending</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div id="insert"></div>
+
+
+    <div id="console"></div>
 </html>
