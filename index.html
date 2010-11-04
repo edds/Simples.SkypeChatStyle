@@ -51,8 +51,8 @@ p img {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   -webkit-animation-name: fadeIn;
-	-webkit-animation-delay: 0s; 
-	-webkit-animation-duration: 0.5s;
+  -webkit-animation-delay: 0s; 
+  -webkit-animation-duration: 0.5s;
 }
 a:link,
 a:visited { color: #00f; text-decoration: none; border-bottom: 1px solid; }
@@ -68,36 +68,61 @@ a:focus { color: #f00; border-bottom: 1px dotted; outline:none;}
   text-align: center;
   margin: 2em;
 }
-h1, h2, ol, p   {
+ins{
+  display:block;
+  padding:5px;
+  margin:5px 0;
+  text-decoration:none;
+  border:2px solid #49A34C;
+  background:#96EA8C;
+}
+div.ribbon{
+  position:absolute;
+  right:0;
+  top:0;
+}
+div.ribbon a{
+  border:0;
+}
+div.ribbon img{
+  border:0;
+}
+h1, h2, ol, p, ins {
   -webkit-animation-name: fadeInAndLeft;
-	-webkit-animation-delay: 0s; 
-	-webkit-animation-duration: 1s;
+  -webkit-animation-delay: 0s; 
+  -webkit-animation-duration: 1s;
 }
 
 @-webkit-keyframes fadeInAndLeft {
-	from {
-		opacity: 0; 
-		margin-left: -20em; 
-		-webkit-animation-timing-function: ease-out;
-	}
-	65% {
-		opacity: 0; 
-		margin-left: -5em;
-	}
-	100% {
-		opacity: 1; 
-		margin-left: 0;
-		-webkit-animation-timing-function: ease-out;
-	}
+  from {
+    opacity: 0; 
+    margin-left: -20em; 
+    -webkit-animation-timing-function: ease-out;
+  }
+  65% {
+    opacity: 0; 
+    margin-left: -5em;
+  }
+  100% {
+    opacity: 1; 
+    margin-left: 0;
+    -webkit-animation-timing-function: ease-out;
+  }
 }
 </style>
 
-<a href="http://github.com/edds/Simples.SkypeChatStyle"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+<div class="ribbon">
+  <a href="http://github.com/edds/Simples.SkypeChatStyle">
+    <img src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" />
+</a>
+</div>
 
 
 <div id="wrapper">
   <h1>Simples <span>a Skype Chat Style</span></h1>
   <p class="byline">by <a href="http://e26.co.uk" title="Master Developer">Edd Sowden</a></p>
+
+  <ins>This currently won't work with the Skype for Mac 5.0 Beta. I will be updating it shortly though.</ins>
 
   <p>Fed up with the default Skype chat style? I decided to make my own, you can use it too.</p>
 
