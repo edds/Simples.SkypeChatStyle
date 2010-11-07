@@ -16,6 +16,22 @@ img {
 	margin-top: 3px;
 }
 
+
+/*** 
+  Globals > Button 
+***/
+button.pill{
+  padding:1px 9px;
+  margin:0 5px;
+  border:1px solid #aaa;
+  background:-webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#adadad));
+  -webkit-border-radius:15px;
+}
+button.pill:hover{
+  cursor:pointer;
+  background:-webkit-gradient(linear, left top, left bottom, from(#C9C9C9), to(#9B9B9B));
+}
+
 /****
   Item Generic
 ***/
@@ -65,7 +81,7 @@ div.item.message img.avatar {
 	-webkit-border-radius: 4px;
 	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
-div.item.message-speech {
+div.item.message div.speech {
 	width:9px;
 	height:14px;
 	position:absolute;
@@ -74,10 +90,24 @@ div.item.message-speech {
 	z-index:2;
 	background: transparent url(../images/message-top.png) no-repeat top left;
 }
-div.item.message div.next {
+div.item.message.out div.speech{
+  background-image: url(../images/message-top-outgoing.png);
+}
+div.item.message div.container span.sender:after{
+  content:' – ';
+}
+div.item.message div.container div.container {
+	margin: 3px 0 0 0;
+	padding: 3px 0 0 0;
 	border-top: 1px solid #9FD4FE;
-	margin-top: 3px;
-	padding-top: 3px;
+	border-width:1px 0 0;
+	-webkit-box-shadow:none;
+}
+div.item.message.out div.container div.container{
+  border-top-color:#C9C9C9;
+}
+div.item.message div.container div.container span.sender{
+  display:none;
 }
 div.item.message button{
   display:none;
@@ -161,6 +191,13 @@ div.history{
 	padding: 1px 20px;
 	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
 }
+div.history div.container{
+  margin:0;
+  padding:5px 0;
+  background:transparent;
+  -webkit-box-shadow:none;
+  border:0;
+}
 div.history a{
   border-left:1px solid #999;
   padding:0 0 0 8px;
@@ -186,6 +223,9 @@ div.item.transfer img.avatar {
 div.item.transfer div.body{
   float:left;
 }
+div.item.transfer div.instance{
+  clear:both;
+}
 div.item.transfer button.delete,
 div.item.transfer button.quicklook,
 div.item.transfer button.reveal,
@@ -198,7 +238,7 @@ div.item.transfer button.edit {
 	opacity: 0.25;
 	border:0;
 }
-#conversation .transfer .icon {
+div.item.transfer .icon {
 	float: left;
 	height: 32px;
 	width: 32px;
@@ -216,169 +256,105 @@ div.item.transfer button.reveal {
 div.item.transfer button.quicklook {
 	background-position: 0 -42px;
 }
-#conversation .transfer .progressbar {
-	margin-top: 9px;
-}
-
-#conversation .transfer.in .progressbar {
-	display: none;
-}
-
-	#conversation .transfer.in .connecting .progressbar {
-		display: block;
-	}
-
-	#conversation .transfer.out .progressbar .progress.hidden,
-	#conversation .transfer .connecting .progressbar .progress.hidden {
-		width: 100%;
-		display: block !important;
-		background-image: url(../gfx/asset-sprite.png);
-		background-repeat: repeat-x;
-		background-position: 0 0;
-		border: 1px solid rgba(0, 0, 0, 0);
-		opacity: 0.1;
-	}
-
-	#conversation .transfer .running .progressbar {
-		display: block;
-		margin-bottom: -2px;
-	}
-	
-	#conversation .transfer .connecting .progressbar {
-		display: block;
-		margin-bottom: -2px;
-	}
-	
-	#conversation .transfer.out .progressbar {
-		margin-bottom: -2px;
-	}
-	
-		#conversation .transfer.out .running .progressbar .total {
-			background: -webkit-gradient(linear, left bottom, left top,
-				color-stop(0, #f0f0f0),
-				color-stop(0.8, #e8e8e8),
-				color-stop(1, #dbdbdb)
-			);
-		}
-				
-	#conversation .transfer .running .accept,
-	#conversation .transfer .running .decline {
-		display: none;
-	}
-	
-	#conversation .transfer .running .cancel {
-		display: block;
-	}
-	
-	#conversation .transfer .running .name {
-		margin-top: 0px;
-	}
-	
-	#conversation .transfer .sub.running .name {
-		margin-top: -1px;
-	}
-
-	#conversation .transfer .running .icon {
-		margin-top: 9px;
-	}
-	
-#conversation .transfer .completed .quicklook,
-#conversation .transfer .completed .reveal,
-#conversation .transfer .completed .delete {
+div.item.transfer.out .progressbar .progress.hidden,
+div.item.transfer .connecting .progressbar .progress.hidden {
+	width: 100%;
 	display: block;
-	margin-top: 11px;
+  background:#999;
+	border: 1px solid #000;
+	opacity: 0.1;
 }
 
-#conversation .transfer .missing .quicklook,
-#conversation .transfer .missing .reveal,
-#conversation .transfer .missing .delete {
+#conversation .transfer.out .running .progressbar .total {
+	background: -webkit-gradient(linear, left bottom, left top,
+		color-stop(0, #f0f0f0),
+		color-stop(0.8, #e8e8e8),
+		color-stop(1, #dbdbdb)
+	);
+}
+
+/***
+  Transfer > Connecting
+***/
+div.item.transfer div.connecting .progressbar {
+	display: block;
+}			
+div.item.transfer div.connecting .accept,
+div.item.transfer div.connecting .decline {
 	display: none;
 }
-
-#conversation .transfer .connecting .accept,
-#conversation .transfer .connecting .decline {
-	display: none;
-}
-
-#conversation .transfer .sub .quicklook,
-#conversation .transfer .sub .reveal,
-#conversation .transfer .sub .delete {
-	margin-top: 18px;
-}
-
-#conversation .transfer .main .reveal {
-	display: none;
-}
-
-#conversation .transfer.in .main.completed:last-child .quicklook,
-#conversation .transfer.in .main.completed:last-child .reveal {
+/***
+  Transfer > Running
+***/
+div.item.transfer div.running .cancel,
+div.item.transfer div.running .progressbar {
 	display: block;
 }
-
-#conversation .transfer.out .main.completed:last-child .quicklook,
-#conversation .transfer.out .main.completed:last-child .reveal,
-#conversation .transfer.out .main.cancelled:last-child .quicklook,
-#conversation .transfer.out .main.cancelled:last-child .reveal {
+div.item.transfer div.running .accept,
+div.item.transfer div.running .decline {
+	display: none;
+}
+/***
+  Transfer > Completed
+***/
+div.item.transfer div.completed .quicklook,
+div.item.transfer div.completed .reveal,
+div.item.transfer div.completed .delete {
 	display: block;
 }
-
-#conversation .transfer.in .completed.cancelled .quicklook,
-#conversation .transfer.in .completed.cancelled .reveal,
-#conversation .transfer.in .completed.failed .quicklook,
-#conversation .transfer.in .completed.failed .reveal {
-	display: none !important;
+div.item.transfer div.completed.cancelled .quicklook,
+div.item.transfer div.completed.cancelled .reveal,
+div.item.transfer div.completed.failed .quicklook,
+div.item.transfer div.completed.failed .reveal {
+	display: none;
 }
-
-#conversation .transfer .completed .quicklook,
-#conversation .transfer .completed .reveal {
-	margin-left: 7px;
-}
-
-#conversation .transfer .completed .accept,
-#conversation .transfer .completed .decline {
+div.item.transfer div.completed .accept,
+div.item.transfer div.completed .decline,
+div.item.transfer div.completed .cancel,
+div.item.transfer div.completed .cancel,
+div.item.transfer div.completed .progressbar {
 	display: none;
 }
 
-#conversation .transfer .missing .accept,
-#conversation .transfer .missing .decline {
-	display: none;
+/***
+  Alert
+***/
+div.item.alert div.container{
+  margin:0;
+  border: 1px solid #E1C843;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
+		, color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
+	text-shadow: 0px 0px 1px #fff;
+  -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+}
+div.item.alert div.head {
+	color: #BCC409;
 }
 
-#conversation .transfer.out .completed .cancel {
-	display: none;
+/***
+  Typing
+***/
+
+div.item.typing div.container{
+  margin:0;
+  border:0;
+	background:transparent;
+	text-align:center;
+	text-shadow:none;
+  -webkit-box-shadow:none;
+}
+div.item.typing.invisible{
+  visibility:hidden;
+}
+div.item.typing div.head {
+  float:none;
+	color: #999;
 }
 
-#conversation .transfer.out .completed .name {
-	margin-top: 8px;
-}
-
-#conversation .transfer.out .completed .icon {
-	margin-top: 1px;
-}
-
-#conversation .transfer.out .sub.completed .icon {
-	margin-top: 9px;
-}
-
-#conversation .transfer .missing .name {
-	opacity: 0.65;
-}
-
-#conversation .transfer .missing .icon {
-	opacity: 0.65;
-}
-
-#conversation .transfer.out .completed .progressbar {
-	display: none;
-}
-
-
-/* Alerts word highlight */
+/* Word highlight */
 
 span.highlight {
-	padding: 1px;
 	background: yellow;
-	display: inline !important;
 }
 
 @-webkit-keyframes fadeIn {

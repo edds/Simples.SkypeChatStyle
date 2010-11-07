@@ -159,6 +159,13 @@ SCS.Conversation = function() {
                     dC.showProfileOfIdentity_($i.attr("data-sender"));
                 }
             });
+            $(".item.message .body img.emoticon").live("click", function(e) {
+              var $i = $(this);
+              var alt = $i.attr('alt');
+              if(alt.length){
+                $i.replaceWith('<span>'+alt+'</span>');
+              }
+            });
             return SCS.err.showError(200, "_item");
         } else {
             return SCS.err.showError(510, "_item");
@@ -412,7 +419,10 @@ SCS.Conversation = function() {
     this.appendItem = function(html, scroll) {
         if (_container.length > 0) {
             var atEnd = self._nearBottom();
-            if ($("#typing").length > 0) {
+            var $html = $(html);
+            if($html.hasClass('followup')){
+              $("div.message:last span.insert").replaceWith($html.html());
+            } else if ($("#typing").length > 0) {
                 $("#conversation #typing").before(html);
             } else {
                 _container.append(html);
