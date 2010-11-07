@@ -4,7 +4,7 @@
 	padding:0;
 }
 body {
-  font-size:65.8%;
+  font-size:62.5%;
   font-family:helvetica,sans-serif;
 }
 
@@ -59,21 +59,19 @@ div.item div.container {
 	text-shadow: 1px 1px 1px #fff;
 }
 div.item div.body{
-  font-size:1.1em;
+  font-size:1.3em;
+  color:#000;
 }
 div.item div.head {
 	float:right;
+	font-size:1.1em;
 	color: #62BEF1;
 }
 div.item div.head a{
 	color: inherit;
 	text-decoration: none;
 }
-
-/***
-  Message
-***/
-div.item.message img.avatar {
+div.item img.avatar {
   position:absolute;
   left:10px;
   top:7px;
@@ -81,7 +79,7 @@ div.item.message img.avatar {
 	-webkit-border-radius: 4px;
 	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
-div.item.message div.speech {
+div.item div.speech {
 	width:9px;
 	height:14px;
 	position:absolute;
@@ -90,6 +88,10 @@ div.item.message div.speech {
 	z-index:2;
 	background: transparent url(../images/message-top.png) no-repeat top left;
 }
+
+/***
+  Message
+***/
 div.item.message.out div.speech{
   background-image: url(../images/message-top-outgoing.png);
 }
@@ -101,6 +103,7 @@ div.item.message div.container div.container {
 	padding: 3px 0 0 0;
 	border-top: 1px solid #9FD4FE;
 	border-width:1px 0 0;
+	background:transparent;
 	-webkit-box-shadow:none;
 }
 div.item.message.out div.container div.container{
@@ -112,10 +115,10 @@ div.item.message div.container div.container span.sender{
 div.item.message button{
   display:none;
 }
-p.context {
+div.item.message.read div.body{
 	color: #528AA6;
 }
-div.outgoing p.context {
+div.item.message.read.out div.body {
 	color: #898989;
 }
 
@@ -189,7 +192,6 @@ div.history{
 	background: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#adadad));
 	border-bottom: 1px solid #777;
 	padding: 1px 20px;
-	font: 10px/22px "Lucida Grande", Verdana, Arial, sans-serif;
 }
 div.history div.container{
   margin:0;
@@ -319,7 +321,8 @@ div.item.transfer div.completed .progressbar {
 /***
   Alert
 ***/
-div.item.alert div.container{
+div.item.alert div.container,
+div.item.emote div.container{
   margin:0;
   border: 1px solid #E1C843;
 	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
@@ -327,7 +330,8 @@ div.item.alert div.container{
 	text-shadow: 0px 0px 1px #fff;
   -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
-div.item.alert div.head {
+div.item.alert div.head,
+div.item.emote div.head{
 	color: #BCC409;
 }
 
