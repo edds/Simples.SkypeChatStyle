@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>SKP1</string>
 	<key>CFBundleVersion</key>
-	<string>6.0</string>
+	<string>1.0</string>
 	<key>DefaultFontFamily</key>
 	<string>Lucida Grande</string>
 	<key>DefaultFontSize</key>
@@ -23,12 +23,12 @@
 	<key>DisableCustomBackground</key>
 	<true/>
 	<key>MessageViewVersion</key>
-	<integer>5</integer>
+	<integer>6</integer>
 	<key>ShowsUserIcons</key>
 	<true/>
 	<key>FormattedCopyCompatible</key>
-	<true/>
+	<false/>
 	<key>SupportsStoredRender</key>
-	<true/>
+	<false/>
 </dict>
 </plist>
