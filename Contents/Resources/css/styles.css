@@ -1,7 +1,7 @@
 /* General */
 * {
-	margin:0;
-	padding:0;
+  margin:0;
+  padding:0;
 }
 body {
   font-size:62.5%;
@@ -9,11 +9,11 @@ body {
 }
 
 img {
-	border: none;
+  border: none;
 }
 
 .emoticon {
-	margin-top: 3px;
+  margin-top: 3px;
 }
 
 
@@ -38,55 +38,55 @@ button.pill:hover{
 
 div.item {
   position:relative;
-	clear: both;
-	padding: 7px 10px;
-	overflow:auto;
-	-webkit-animation-name: fadeIn;
-	-webkit-animation-delay: 0s; 
-	-webkit-animation-duration: 0.9s;
+  clear: both;
+  padding: 7px 10px;
+  overflow:auto;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-delay: 0s; 
+  -webkit-animation-duration: 0.9s;
 }
 div.item div.container {
-	margin: 0 0 0 43px;
-	padding: 3px 6px;
-	line-height: 18px;
+  margin: 0 0 0 43px;
+  padding: 3px 6px;
+  line-height: 18px;
   overflow:auto;
-	border: 1px solid #62A9DF;
-	-webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.25);
-	-webkit-border-radius: 5px;
-	border-radiusadius: 5px;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c2e0fd)
-		, color-stop(2%, #d9ebfd), color-stop(50%, #d9ebfd));
-	text-shadow: 1px 1px 1px #fff;
+  border: 1px solid #62A9DF;
+  -webkit-box-shadow:1px 1px 4px rgba(0,0,0,0.25);
+  -webkit-border-radius: 5px;
+  border-radiusadius: 5px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#c2e0fd)
+    , color-stop(2%, #d9ebfd), color-stop(50%, #d9ebfd));
+  text-shadow: 1px 1px 1px #fff;
 }
 div.item div.body{
   font-size:1.3em;
   color:#000;
 }
 div.item div.head {
-	float:right;
-	font-size:1.1em;
-	color: #62BEF1;
+  float:right;
+  font-size:1.1em;
+  color: #62BEF1;
 }
 div.item div.head a{
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 div.item img.avatar {
   position:absolute;
   left:10px;
   top:7px;
-	width: 30px;
-	-webkit-border-radius: 4px;
-	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+  width: 30px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
 div.item div.speech {
-	width:9px;
-	height:14px;
-	position:absolute;
-	top: 15px;
-	left: 45px;
-	z-index:2;
-	background: transparent url(../images/message-top.png) no-repeat top left;
+  width:9px;
+  height:14px;
+  position:absolute;
+  top: 15px;
+  left: 45px;
+  z-index:2;
+  background: transparent url(../images/message-top.png) no-repeat top left;
 }
 
 /***
@@ -99,12 +99,12 @@ div.item.message div.container span.sender:after{
   content:' – ';
 }
 div.item.message div.container div.container {
-	margin: 3px 0 0 0;
-	padding: 3px 0 0 0;
-	border-top: 1px solid #9FD4FE;
-	border-width:1px 0 0;
-	background:transparent;
-	-webkit-box-shadow:none;
+  margin: 3px 0 0 0;
+  padding: 3px 0 0 0;
+  border-top: 1px solid #9FD4FE;
+  border-width:1px 0 0;
+  background:transparent;
+  -webkit-box-shadow:none;
 }
 div.item.message.out div.container div.container{
   border-top-color:#C9C9C9;
@@ -116,28 +116,28 @@ div.item.message button{
   display:none;
 }
 div.item.message.read div.body{
-	color: #528AA6;
+  color: #528AA6;
 }
 div.item.message.read.out div.body {
-	color: #898989;
+  color: #898989;
 }
 
 /***  
   Message > Out 
 ***/
 div.out.message div.container {
-	border-color: #9F9F9F;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
-		, color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
+  border-color: #9F9F9F;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
+    , color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
 }
 div.item.out div.message-speech {
-	background-image: url(../images/message-top-outgoing.png);
+  background-image: url(../images/message-top-outgoing.png);
 }
 div.item.out div.head {
-	color: #AFAFAF;
+  color: #AFAFAF;
 }
 div.item.out div.next {
-	border-top-color: #C9C9C9;
+  border-top-color: #C9C9C9;
 }
 
 
@@ -151,23 +151,23 @@ div.item.topic{
   right:0;
   margin:0;
   padding:2px;
-	z-index:10;
-	border: 1px solid #E1C843;
-	border-width:0 0 1px 0;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
-		, color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
-	text-shadow: 0px 0px 1px #fff;
+  z-index:10;
+  border: 1px solid #E1C843;
+  border-width:0 0 1px 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
+    , color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
+  text-shadow: 0px 0px 1px #fff;
   -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
 div.item.topic div.container{
   margin:0;
-	-webkit-box-shadow:none;
+  -webkit-box-shadow:none;
   background:transparent;
   border:0;
 }
 div.item.topic div.head {
-	float:right;
-	color: #BCC409;
+  float:right;
+  color: #BCC409;
 }
 
 /***
@@ -175,23 +175,23 @@ div.item.topic div.head {
 ***/
 div.item.status div.container {
   margin:0;
-	border: 1px solid #E1C843;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
-		, color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
-	text-shadow: 0px 0px 1px #fff;
+  border: 1px solid #E1C843;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
+    , color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
+  text-shadow: 0px 0px 1px #fff;
 }
 
 div.item.status div.head {
-	color: #BCC409;
+  color: #BCC409;
 }
 
 /***
   History
 ***/
 div.history{
-	background: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#adadad));
-	border-bottom: 1px solid #777;
-	padding: 1px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#d9d9d9), to(#adadad));
+  border-bottom: 1px solid #777;
+  padding: 1px 20px;
 }
 div.history div.container{
   margin:0;
@@ -218,9 +218,9 @@ div.item.transfer img.avatar {
   position:absolute;
   left:10px;
   top:7px;
-	width: 30px;
-	-webkit-border-radius: 4px;
-	-webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
+  width: 30px;
+  -webkit-border-radius: 4px;
+  -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
 div.item.transfer div.body{
   float:left;
@@ -233,68 +233,68 @@ div.item.transfer button.quicklook,
 div.item.transfer button.reveal,
 div.item.transfer button.cancel,
 div.item.transfer button.edit {
-	width: 14px;
-	height: 14px;
-	background: url(../images/buttons-14.png) no-repeat 0 0;
-	vertical-align: middle;
-	opacity: 0.25;
-	border:0;
+  width: 14px;
+  height: 14px;
+  background: url(../images/buttons-14.png) no-repeat 0 0;
+  vertical-align: middle;
+  opacity: 0.25;
+  border:0;
 }
 div.item.transfer .icon {
-	float: left;
-	height: 32px;
-	width: 32px;
-	margin-top: 1px;
+  float: left;
+  height: 32px;
+  width: 32px;
+  margin-top: 1px;
 }
 div.item.transfer button.delete {
-	background-position: 0 0;
+  background-position: 0 0;
 }
 div.item.transfer button.cancel {
-	background-position: 0 0;
+  background-position: 0 0;
 }
 div.item.transfer button.reveal {
-	background-position: 0 -56px;
+  background-position: 0 -56px;
 }
 div.item.transfer button.quicklook {
-	background-position: 0 -42px;
+  background-position: 0 -42px;
 }
 div.item.transfer.out .progressbar .progress.hidden,
 div.item.transfer .connecting .progressbar .progress.hidden {
-	width: 100%;
-	display: block;
+  width: 100%;
+  display: block;
   background:#999;
-	border: 1px solid #000;
-	opacity: 0.1;
+  border: 1px solid #000;
+  opacity: 0.1;
 }
 
 #conversation .transfer.out .running .progressbar .total {
-	background: -webkit-gradient(linear, left bottom, left top,
-		color-stop(0, #f0f0f0),
-		color-stop(0.8, #e8e8e8),
-		color-stop(1, #dbdbdb)
-	);
+  background: -webkit-gradient(linear, left bottom, left top,
+    color-stop(0, #f0f0f0),
+    color-stop(0.8, #e8e8e8),
+    color-stop(1, #dbdbdb)
+  );
 }
 
 /***
   Transfer > Connecting
 ***/
 div.item.transfer div.connecting .progressbar {
-	display: block;
-}			
+  display: block;
+}      
 div.item.transfer div.connecting .accept,
 div.item.transfer div.connecting .decline {
-	display: none;
+  display: none;
 }
 /***
   Transfer > Running
 ***/
 div.item.transfer div.running .cancel,
 div.item.transfer div.running .progressbar {
-	display: block;
+  display: block;
 }
 div.item.transfer div.running .accept,
 div.item.transfer div.running .decline {
-	display: none;
+  display: none;
 }
 /***
   Transfer > Completed
@@ -302,20 +302,20 @@ div.item.transfer div.running .decline {
 div.item.transfer div.completed .quicklook,
 div.item.transfer div.completed .reveal,
 div.item.transfer div.completed .delete {
-	display: block;
+  display: block;
 }
 div.item.transfer div.completed.cancelled .quicklook,
 div.item.transfer div.completed.cancelled .reveal,
 div.item.transfer div.completed.failed .quicklook,
 div.item.transfer div.completed.failed .reveal {
-	display: none;
+  display: none;
 }
 div.item.transfer div.completed .accept,
 div.item.transfer div.completed .decline,
 div.item.transfer div.completed .cancel,
 div.item.transfer div.completed .cancel,
 div.item.transfer div.completed .progressbar {
-	display: none;
+  display: none;
 }
 
 /***
@@ -325,14 +325,18 @@ div.item.alert div.container,
 div.item.emote div.container{
   margin:0;
   border: 1px solid #E1C843;
-	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
-		, color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
-	text-shadow: 0px 0px 1px #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#FFF4B2)
+    , color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
+  text-shadow: 0px 0px 1px #fff;
   -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
 div.item.alert div.head,
 div.item.emote div.head{
-	color: #BCC409;
+  color: #BCC409;
+}
+div.item.alert div.head img.avatar,
+div.item.emote div.head img.avatar{
+  display:none;
 }
 
 /***
@@ -342,9 +346,9 @@ div.item.emote div.head{
 div.item.typing div.container{
   margin:0;
   border:0;
-	background:transparent;
-	text-align:center;
-	text-shadow:none;
+  background:transparent;
+  text-align:center;
+  text-shadow:none;
   -webkit-box-shadow:none;
 }
 div.item.typing.invisible{
@@ -352,24 +356,24 @@ div.item.typing.invisible{
 }
 div.item.typing div.head {
   float:none;
-	color: #999;
+  color: #999;
 }
 
 /* Word highlight */
 
 span.highlight {
-	background: yellow;
+  background: yellow;
 }
 
 @-webkit-keyframes fadeIn {
-	from {
-		opacity: 0; 
-	}
-	30% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1; 
-		-webkit-animation-timing-function: ease-out;
-	}
+  from {
+    opacity: 0; 
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1; 
+    -webkit-animation-timing-function: ease-out;
+  }
 }
