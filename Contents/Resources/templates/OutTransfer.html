@@ -1,20 +1,23 @@
 <div class="item transfer out" id="%itemId%">
-	<div class="container">
-		%transferHead%
-		<div class="body">
-			<div class="main instance %transferStatus%">
-				<img class="icon" src="%transferType%" />
-				<button class="cancel" title="%tooltipCancel%"></button>
-				<button class="quicklook" title="%tooltipQuicklook%"></button>
-				<button class="reveal" title="%tooltipReveal%"></button>
-				<span class="name">%name%</span>
-				<span class="progressbar">
-					<span class="total"></span>
-					<span class="progress %transferProgress%"></span>
-				</span>
-				<span class="size">%size%</span>
-			</div>
-			%subTransfers%
-		</div>
-	</div>
+  <div class="speech"></div>
+  <div class="container">
+    %transferHead%
+    <div class="body">
+      <div class="main instance %transferStatus%">
+        <img class="icon" src="%transferType%" />
+        <span class="name">%name%</span>
+        <button class="pill accept">%acceptTransfer%</button>
+        <button class="pill decline">%declineTransfer%</button>
+        <button class="pill cancel" >%tooltipCancel%</button>
+        <button class="pill quicklook">%tooltipQuicklook%</button>
+        <button class="pill reveal">%tooltipReveal%</button>
+        <span class="progressbar">
+          <span class="total"></span>
+          <span class="size">%size%</span>
+          <span class="progress"></span>
+        </span>
+      </div>
+       %subTransfers%
+    </div>
+  </div>
 </div>

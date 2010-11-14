@@ -88,13 +88,22 @@ div.item div.speech {
   z-index:2;
   background: transparent url(../images/message-top.png) no-repeat top left;
 }
+div.item.out div.speech{
+  background-image: url(../images/message-top-outgoing.png);
+}
+div.item.out div.container {
+  border-color: #9F9F9F;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
+    , color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
+}
+div.item.out div.head {
+  color: #AFAFAF;
+}
+
 
 /***
   Message
 ***/
-div.item.message.out div.speech{
-  background-image: url(../images/message-top-outgoing.png);
-}
 div.item.message div.container span.sender:after{
   content:' – ';
 }
@@ -125,17 +134,6 @@ div.item.message.read.out div.body {
 /***  
   Message > Out 
 ***/
-div.out.message div.container {
-  border-color: #9F9F9F;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#DADADA)
-    , color-stop(2%, #E7E7E7), color-stop(50%, #E7E7E7));
-}
-div.item.out div.message-speech {
-  background-image: url(../images/message-top-outgoing.png);
-}
-div.item.out div.head {
-  color: #AFAFAF;
-}
 div.item.out div.next {
   border-top-color: #C9C9C9;
 }
@@ -222,99 +220,110 @@ div.item.transfer img.avatar {
   -webkit-border-radius: 4px;
   -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.5);
 }
-div.item.transfer div.body{
-  float:left;
-}
-div.item.transfer div.instance{
-  clear:both;
-}
-div.item.transfer button.delete,
-div.item.transfer button.quicklook,
-div.item.transfer button.reveal,
-div.item.transfer button.cancel,
-div.item.transfer button.edit {
-  width: 14px;
-  height: 14px;
-  background: url(../images/buttons-14.png) no-repeat 0 0;
-  vertical-align: middle;
-  opacity: 0.25;
-  border:0;
-}
 div.item.transfer .icon {
   float: left;
   height: 32px;
   width: 32px;
   margin-top: 1px;
 }
-div.item.transfer button.delete {
-  background-position: 0 0;
+div.item.transfer .name{
+  line-height:32px;
+  padding:0 4px;
 }
-div.item.transfer button.cancel {
-  background-position: 0 0;
+div.item.transfer button{
+  margin:8px 4px;
 }
-div.item.transfer button.reveal {
-  background-position: 0 -56px;
+div.item.transfer .progressbar{
+  clear:both;
+  position:relative;
+  width:100%;
+  height:20px;
+  margin:4px 0;
+  background:#ccc;
+  border:1px solid #999;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
-div.item.transfer button.quicklook {
-  background-position: 0 -42px;
-}
-div.item.transfer.out .progressbar .progress.hidden,
-div.item.transfer .connecting .progressbar .progress.hidden {
-  width: 100%;
+div.item.transfer .progressbar .progress{
+  position:absolute;
+  top:0;
+  left:0;
+  width: 0%;
+  height:100%;
   display: block;
-  background:#999;
-  border: 1px solid #000;
-  opacity: 0.1;
+  background:#005;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+}
+div.item.transfer .progressbar .size{
+  position:absolute;
+  top:0;
+  left:5px;
+  z-index:5;
+}
+div.item.transfer .progressbar .total{
+  position:absolute;
+  top:0;
+  right:5px;
+  z-index:5;
+}
+div.item.transfer .progressbar .progress{
+  background:-webkit-gradient(linear, left top, left bottom, 
+              color-stop(0%,#9dd53a), color-stop(50%,#a1d54f), 
+              color-stop(51%,#80c217), color-stop(100%,#7cbc0a));
 }
 
-#conversation .transfer.out .running .progressbar .total {
-  background: -webkit-gradient(linear, left bottom, left top,
-    color-stop(0, #f0f0f0),
-    color-stop(0.8, #e8e8e8),
-    color-stop(1, #dbdbdb)
-  );
+/*** 
+  Transfer > Defaults
+***/
+div.item.transfer div.instance .progressbar,
+div.item.transfer div.instance .accept,
+div.item.transfer div.instance .decline,
+div.item.transfer div.instance .cancel,
+div.item.transfer div.instance .quicklook,
+div.item.transfer div.instance .reveal,
+div.item.transfer div.instance .delete{
+  display:none;
 }
-
+/***
+  Transfer > Waiting
+***/
+div.item.transfer.in div.instance.waiting .accept,
+div.item.transfer.in div.instance.waiting .decline{
+  display:inline-block;
+}
+div.item.transfer.out div.instance.waiting .progressbar{
+  display:block;
+}
 /***
   Transfer > Connecting
 ***/
-div.item.transfer div.connecting .progressbar {
+div.item.transfer div.instance.connecting .progressbar {
   display: block;
 }      
-div.item.transfer div.connecting .accept,
-div.item.transfer div.connecting .decline {
-  display: none;
-}
 /***
   Transfer > Running
 ***/
-div.item.transfer div.running .cancel,
-div.item.transfer div.running .progressbar {
-  display: block;
+div.item.transfer div.instance.running .cancel{
+  display:inline-block
 }
-div.item.transfer div.running .accept,
-div.item.transfer div.running .decline {
-  display: none;
+div.item.transfer div.instance.running .progressbar {
+  display: block;
 }
 /***
   Transfer > Completed
 ***/
-div.item.transfer div.completed .quicklook,
-div.item.transfer div.completed .reveal,
-div.item.transfer div.completed .delete {
-  display: block;
+div.item.transfer.in div.instance.completed .quicklook,
+div.item.transfer.in div.instance.completed .reveal,
+div.item.transfer.in div.instance.completed .delete {
+  display: inline-block;
 }
-div.item.transfer div.completed.cancelled .quicklook,
-div.item.transfer div.completed.cancelled .reveal,
-div.item.transfer div.completed.failed .quicklook,
-div.item.transfer div.completed.failed .reveal {
-  display: none;
-}
-div.item.transfer div.completed .accept,
-div.item.transfer div.completed .decline,
-div.item.transfer div.completed .cancel,
-div.item.transfer div.completed .cancel,
-div.item.transfer div.completed .progressbar {
+div.item.transfer.in div.instance.completed.cancelled .quicklook,
+div.item.transfer.in div.instance.completed.cancelled .reveal,
+div.item.transfer.in div.instance.completed.failed .quicklook,
+div.item.transfer.in div.instance.completed.failed .reveal {
   display: none;
 }
 
