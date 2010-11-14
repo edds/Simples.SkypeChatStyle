@@ -7,15 +7,12 @@ body {
   font-size:62.5%;
   font-family:helvetica,sans-serif;
 }
-
 img {
   border: none;
 }
-
 .emoticon {
   margin-top: 3px;
 }
-
 
 /*** 
   Globals > Button 
@@ -35,7 +32,6 @@ button.pill:hover{
 /****
   Item Generic
 ***/
-
 div.item {
   position:relative;
   clear: both;
@@ -100,7 +96,6 @@ div.item.out div.head {
   color: #AFAFAF;
 }
 
-
 /***
   Message
 ***/
@@ -137,7 +132,6 @@ div.item.message.read.out div.body {
 div.item.out div.next {
   border-top-color: #C9C9C9;
 }
-
 
 /***
   Topic
@@ -178,7 +172,6 @@ div.item.status div.container {
     , color-stop(2%, #FEF7CF), color-stop(50%, #FEFBCE));
   text-shadow: 0px 0px 1px #fff;
 }
-
 div.item.status div.head {
   color: #BCC409;
 }
@@ -207,7 +200,6 @@ div.history a{
 div.history a:first-child{
   border-left:none;
 }
-
 
 /***
   Transfer
@@ -287,6 +279,7 @@ div.item.transfer div.instance .reveal,
 div.item.transfer div.instance .delete{
   display:none;
 }
+
 /***
   Transfer > Waiting
 ***/
@@ -297,12 +290,14 @@ div.item.transfer.in div.instance.waiting .decline{
 div.item.transfer.out div.instance.waiting .progressbar{
   display:block;
 }
+
 /***
   Transfer > Connecting
 ***/
 div.item.transfer div.instance.connecting .progressbar {
   display: block;
 }      
+
 /***
   Transfer > Running
 ***/
@@ -312,6 +307,7 @@ div.item.transfer div.instance.running .cancel{
 div.item.transfer div.instance.running .progressbar {
   display: block;
 }
+
 /***
   Transfer > Completed
 ***/
@@ -351,7 +347,6 @@ div.item.emote div.head img.avatar{
 /***
   Typing
 ***/
-
 div.item.typing div.container{
   margin:0;
   border:0;
@@ -368,12 +363,23 @@ div.item.typing div.head {
   color: #999;
 }
 
-/* Word highlight */
-
+/***
+  Word highlight
+***/
 span.highlight {
   background: yellow;
 }
 
+/***
+  Call 
+***/
+div.item.call div.body{
+  font-weight:bold;
+}
+
+/***
+  Keyframe transitions
+***/
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; 
