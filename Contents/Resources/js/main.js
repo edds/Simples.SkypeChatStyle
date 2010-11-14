@@ -420,8 +420,11 @@ SCS.Conversation = function() {
         if (_container.length > 0) {
             var atEnd = self._nearBottom();
             var $html = $(html);
-            if($html.hasClass('followup')){
-              $("div.message:last span.insert").replaceWith($html.html());
+            var $lastMessage = $('div.message:last');
+            var sameType = ($lastMessage.hasClass('read') && $html.hasClass('read')) ||
+                           (!$lastMessage.hasClass('read') && !$html.hasClass('read'));
+            if($html.hasClass('followup') && sameType){
+              $("span.insert", $lastMessage).replaceWith($html.html());
             } else if ($("#typing").length > 0) {
                 $("#conversation #typing").before(html);
             } else {
@@ -559,7 +562,7 @@ SCS.Conversation = function() {
     this.typingUpdate = function(html, status, scroll) {
         if (_container.length > 0) {
             if (status == "hide" || html == "") {
-                $("#typing").addClass("invisible");
+                $("#typing .container .head .sender").html("&nbsp;");
             } else {
                 if ($("#typing").length > 0) {
                     $("#typing").remove();
@@ -582,7 +585,8 @@ SCS.Conversation = function() {
      */    
     this.scrollToEnd = function() {
         if (_container.length > 0) {
-            window.scrollTo(0,_container.outerHeight());
+            var targetTop = $('body').height() - window.innerHeight;
+            $('body').animate({scrollTop: targetTop}, 500)
             return SCS.err.showError(200, "scrollToEnd");
         } else {
             return SCS.err.showError(510, "scrollToEnd");
