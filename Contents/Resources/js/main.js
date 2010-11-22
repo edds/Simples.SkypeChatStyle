@@ -424,11 +424,16 @@ SCS.Conversation = function() {
             var sameType = ($lastMessage.hasClass('read') && $html.hasClass('read')) ||
                            (!$lastMessage.hasClass('read') && !$html.hasClass('read'));
             if($html.hasClass('followup') && sameType){
-              $("span.insert", $lastMessage).replaceWith($html.html());
+              // treat this as a followup message and append inside the most recent message
+              $lastMessage.children('div.container').append($html.childern('div.container'));
             } else if ($("#typing").length > 0) {
-                $("#conversation #typing").before(html);
+              // this is a new message and we have the typing indicator so insert before it
+              $("#conversation #typing").before(html);
             } else {
-                _container.append(html);
+              // this is a new message and there is no typing indicator on the page. This
+              // should never happen as we put one there before the page is loaded.
+              _container.append(html);
+              
             }
             if (scroll && atEnd) {
                 self.scrollToEnd();
