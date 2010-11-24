@@ -425,7 +425,7 @@ SCS.Conversation = function() {
                            (!$lastMessage.hasClass('read') && !$html.hasClass('read'));
             if($html.hasClass('followup') && sameType){
               // treat this as a followup message and append inside the most recent message
-              $lastMessage.children('div.container').append($html.childern('div.container'));
+              $lastMessage.children('div.container').append($html.children('div.container'));
             } else if ($("#typing").length > 0) {
               // this is a new message and we have the typing indicator so insert before it
               $("#conversation #typing").before(html);
