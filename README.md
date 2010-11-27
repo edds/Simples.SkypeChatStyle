@@ -27,7 +27,7 @@ If you consider yourself comfortable with the command line and want to run the l
 
 1. `cd ~/Library/Application\ Support/Skype/ChatStyles/` (if ChatStyles folder does not exist create it)
 2. If you have a previous install of Simples you will need to remove it using `rm -rf Simples.SkypeChatStyle`
-3. For Skype v3 run `git clone git@github.com:edds/Simples.SkypeChatStyle.git` or for Skype v5b run `git clone git@github.com:edds/Simples.SkypeChatStyle.git -b skype-v5`
+3. For Skype v3 run `git clone git@github.com:edds/Simples.SkypeChatStyle.git -b master` or for Skype v5b run `git clone git@github.com:edds/Simples.SkypeChatStyle.git`
 4. Restart Skype and select Simples from the 'Messaging' preferences
 
 [download]: http://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle-0.3.zip
