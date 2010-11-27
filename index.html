@@ -1,115 +1,7 @@
 <!doctype html>
 
 <title>Simples Skype Chat Style</title>
-
-<style>
-* {
-  padding:0;
-  margin: 0;
-}
-body {
-  font: 13px/20px 'Helvetica Neue', Helvetica;
-  text-align: center;
-  background: #ddd;
-  color: #333;
-  text-shadow: 1px 1px 2px #fff;
-}
-h1,h2 {
-  font-weight: 200;
-  font-size: 3em;
-  line-height:1;
-}
-h1 span {
-  color: #777;
-}
-.byline {
-  font-style:italic;
-  padding: 4px 0 1em;
-}
-h2{
-    line-height:1.5;
-  font-size: 2em;
-  margin: .4em 0;
-}
-ol {
-  margin: 1em 0 2em;
-}
-li {
-  margin: 0 0 .4em;
-}
-code {
-  font-size: .9em;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 2px;
-}
-p img {
-  -webkit-box-shadow: 1px 1px 5px #666;
-  -moz-box-shadow: 1px 1px 5px #666;
-  box-shadow: 1px 1px 5px #666;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-animation-name: fadeIn;
-  -webkit-animation-delay: 0s; 
-  -webkit-animation-duration: 0.5s;
-}
-a:link,
-a:visited { color: #00f; text-decoration: none; border-bottom: 1px solid; }
-a:hover,
-a:active,
-a:focus { color: #f00; border-bottom: 1px dotted; outline:none;}
-#wrapper {
-  margin: 2em auto;
-  width: 600px;
-  text-align:left;
-}
-.copy {
-  text-align: center;
-  margin: 2em;
-}
-ins{
-  display:block;
-  padding:5px;
-  margin:5px 0;
-  text-decoration:none;
-  border:2px solid #49A34C;
-  background:#96EA8C;
-}
-div.ribbon{
-  position:absolute;
-  right:0;
-  top:0;
-}
-div.ribbon a{
-  border:0;
-}
-div.ribbon img{
-  border:0;
-}
-h1, h2, ol, p, ins {
-  -webkit-animation-name: fadeInAndLeft;
-  -webkit-animation-delay: 0s; 
-  -webkit-animation-duration: 1s;
-}
-
-@-webkit-keyframes fadeInAndLeft {
-  from {
-    opacity: 0; 
-    margin-left: -20em; 
-    -webkit-animation-timing-function: ease-out;
-  }
-  65% {
-    opacity: 0; 
-    margin-left: -5em;
-  }
-  100% {
-    opacity: 1; 
-    margin-left: 0;
-    -webkit-animation-timing-function: ease-out;
-  }
-}
-</style>
+<link rel="stylesheet" href="./stylesheets/simples.css">
 
 <div class="ribbon">
   <a href="http://github.com/edds/Simples.SkypeChatStyle">
@@ -119,40 +11,128 @@ h1, h2, ol, p, ins {
 
 
 <div id="wrapper">
-  <h1>Simples <span>a Skype Chat Style</span></h1>
-  <p class="byline">by <a href="http://e26.co.uk" title="Master Developer">Edd Sowden</a></p>
+  <header>
+    <h1>Simples <span>a Skype Chat Style</span></h1>
+    <p class="byline">by <a href="http://e26.co.uk" title="Master Developer">Edd Sowden</a></p>
 
-  <ins>
-    This currently won't work with the Skype for Mac 5.0 Beta. I will be updating it shortly though.
-    If you wish to live on the edge a very early alpha version can be 
-    <a href="https://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle-0.4.2.zip">downloaded</a>
-    now.
-  </ins>
+    <p class="intro">
+      Fed up with the default Skype chat style? I decided to make my own, you 
+      can use it too.
+    </p>
+  </header>
 
-  <p>Fed up with the default Skype chat style? I decided to make my own, you can use it too.</p>
+  <section class="features">
+    <h2>Features</h2>
+    <ul class="features">
+      <li class="feature">
+        <a href="./images/skype-v5.png" title="zoom">
+          <img src="./images/features/feature-1.png" height="100" width="160">
+          <p>Threaded Messaging</p>
+        </a>
+      </li>
+      <li class="feature">
+        <a href="./images/skype-v5.png" title="zoom">
+          <img src="./images/features/feature-2.png" height="100" width="160">
+          <p>Minimal Interface</p>
+        </a>
+      </li>
+      <li class="feature">
+        <a href="./images/skype-v5.png" title="zoom">
+          <img src="./images/features/feature-3.png" height="100" width="160">
+          <p>Smooth Scolling</p>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-  <h2>Installation Instructions</h2>
-
-  <ol>
-    <li><a href="http://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle-0.3.1.zip" title="Direct Download">Download</a> the latest <a href="/Simples.SkypeChatStyle">Simples.SkypeChatStyle</a> release</li>
-    <li>Double click <code>Simples.SkypeChatStyle-0.3.zip</code> to extract it</li>
-    <li>Double click the extracted <code>Simples.SkypeChatStyle</code> bundle to install</li>
-    <li>Select the Simples chat style in the Skype chat preferences</li>
-  </ol>
-
-  <h2>Screen Shot</h2>
-  <p><img src="./screenshot.png" alt="screenshot" width="591" height="340"></p>
-  
-  <h2>Code</h2>
-  <p>
-    The code is heavily based on the 'Skype Modern Chat Style'. I have however, 
-    altered it to make use of the fact that the chat window is running a recent 
-    Webkit. As it has access to CSS3 features it seemed obvious to make use of them, 
-    such as animations, rounded corners and gradients.
-  </p>
-  
-  <p class="copy">&copy; 2010 <a href="http://e26.co.uk">Edd Sowden</a></p>
+  <section class="download">
+    <h2>Download</h2>
+    <ul class="downloads">
+      <li class="download">
+        <a href="https://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle-0.4.3.zip" title="the latest and greatest">
+          <h3>Download for Skype v5 Beta</h3>
+          <p>If your running the latest beta from Skype you want this version</p>
+        </a>
+      </li>
+      <li class="download">
+        <a href="https://github.com/downloads/edds/Simples.SkypeChatStyle/Simples.SkypeChatStyle-0.3.1.zip" title="its getting a little old">
+          <h3>Download for Skype v3</h3>
+          <p>If you are still running the latest stable relase you want this version</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+  <section class="installation text">
+    <h2>Installation Instructions</h2>
+    <ol>
+      <li>Download the latest release from one of the above links.</li>
+      <li>Extract the zip by double clicking it.</li>
+      <li>Either depending on which version you are using:
+        <ul>
+          <li>Double click the extracted <code>install</code> file which will run an installer</li>
+          <li>Double click the extracted <code>Simples.SkypeChatStyle</code> bundle to install</li>
+        </ul>
+      </li>
+      <li>Restart Skype</li>
+      <li>Select the Simples chat style in the Skype chat preferences</li>
+    </ol>
+  </section>
+  <section class="advanced text">
+    <h2>Advanced Users</h2>
+    <p>
+      If you want to run the very latest codebase you should run a 
+      <code>git clone git@github.com:edds/Simples.SkypeChatStyle.git</code> from
+      the folder <code>~/Library/Application Support/Skype/ChatStyles/</code>.
+      That folder might not exist if you haven't install a custom theme before so
+      you might need to create it.
+    </p>
+    <p>
+      <em>If that didn't make any sense to you then you should probably use one
+        of the downloads from above.</em>
+    </p>
+  </section>
+  <section class="issues text">
+    <h2>Issues</h2>
+    <p>
+      If you run into any problems while using the SkypeChatStyle please feel
+      free to <a href="https://github.com/edds/Simples.SkypeChatStyle/issues" title="I will try and fix ti">open an issue</a>
+      for the bug and I will try my best to resolve it promptly.
+    </p>
+  </section>
+  <section class="code text">
+    <h2>Code</h2>
+    <p>
+      The chat window is running a recent Webkit. As it has access to CSS3 
+      features it seemed obvious to make use of them, such as animations, 
+      rounded corners and gradients.
+    </p>
+    <p>
+      If you would like to extend this theme feel free to 
+      <a href="http://github.com/edds/Simples.SkypeChatStyle" title="I might just pull">fork the code</a>
+      and then send a pull request. I am particuarly interested in anyone who
+      would be able to style the voicemail section in Skype 5 as I don't personally
+      use that feature and don't know how it should work.
+    </p>
+  </section>
+  <footer>
+    <p class="copy">&copy; <a href="http://e26.co.uk">Edd Sowden</a></p>
+  </footer>
 </div>
+<div class="lightbox">
+  <p><img src="./images/skype-v5.png" alt="skype-v5"></p>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript">
+  $(function(){
+    $("a[href$=png]").click(function(){
+      $('.lightbox').fadeIn();
+      return false;
+    });
+    $('.lightbox').click(function(){
+      $(this).fadeOut();
+    });
+  });
+</script>
 <script type="text/javascript">
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-325261-9']);

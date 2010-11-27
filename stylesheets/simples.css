@@ -1,0 +1,246 @@
+* {
+  padding:0;
+  margin: 0;
+}
+body {
+  font: 13px/20px 'Helvetica Neue', Helvetica;
+  text-align: center;
+  background: #ddd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ddd), to(#aaa));
+  background: -moz-linear-gradient(top,#ddd 0%, #aaa 100%);
+  color: #333;
+}
+h1,h2 {
+  font-weight: 200;
+  font-size: 3em;
+  line-height:1;
+}
+header{
+  display:block;
+  padding-left:20px;
+}
+header,
+section,
+footer{
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.9);
+}
+h1 span {
+  color: #777;
+}
+.byline {
+  font-style:italic;
+  padding: 4px 0 1em;
+}
+h2{
+  line-height:1.5;
+  font-size: 2em;
+  margin: .4em 0;
+}
+ol {
+  margin: 1em 0 2em;
+}
+ul {
+  margin:0.5em 0 0 1em
+}
+li {
+  margin: 0 0 .4em;
+}
+code {
+  font-size: .9em;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 2px;
+}
+a img{
+  border:0;
+}
+li img,
+p img{
+  -webkit-box-shadow: 1px 1px 5px #666;
+  -moz-box-shadow: 1px 1px 5px #666;
+  box-shadow: 1px 1px 5px #666;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-delay: 0s; 
+  -webkit-animation-duration: 0.5s;
+}
+a:link,
+a:visited {
+  color: #00f;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+a:hover,
+a:active,
+a:focus { 
+  color: #f00;
+  border-bottom: 1px dotted;
+  outline:none;
+}
+/*** Wrapper ***/
+#wrapper {
+  margin: 2em auto;
+  width: 600px;
+  text-align:left;
+}
+
+/*** Features ***/
+section.features h2{
+  padding-left:20px;
+}
+ul.features {
+  overflow:hidden;
+  margin:0;
+}
+ul.features li.feature{
+  list-style:none;
+  float:left;
+  width:33.33%;
+  padding:5px 20px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  text-align:center;
+}
+ul.features li.feature a{
+  border-bottom:0;
+  color:#000;
+}
+/*** Downloads ***/
+section.download h2{
+  padding-left:20px;
+}
+ul.downloads{
+  overflow:hidden;
+  margin:0;
+}
+ul.downloads li{
+  list-style:none;
+  float:left;
+  width:50%;
+  padding:5px 20px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  text-align:center;
+}
+ul.downloads li a{
+  display:inline-block;
+  padding:10px;
+  border:1px solid #58820F;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+  border-radius:10px;
+  color:#460;
+  text-align:left;
+  background: #9dd53a;
+  background: -moz-linear-gradient(top, #9dd53a 0%, #7cbc0a 80%,
+                                  #5F8E08, 100%);
+  background: -webkit-gradient(linear, left top, left bottom,
+                            color-stop(0%,#9dd53a), color-stop(80%,#7cbc0a),
+                            color-stop(100%,#5F8E08));
+    -webkit-box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+    -moz-box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+  box-shadow:1px 1px 5px rgba(0,0,0,0.5);
+  text-align:center;
+}
+ul.downloads li a h3{
+  line-height:1.5em;
+}
+ul.downloads li a p{
+  line-height:1.1em;
+  font-size:0.85em;
+}
+/*** Other Sections ***/
+section.text{
+  padding:0 20px;
+}
+
+section.text p{
+  padding-bottom:0.8em;
+}
+/*** Footer ***/
+.copy {
+  text-align: center;
+  margin: 2em;
+}
+ins{
+  display:block;
+  padding:5px;
+  margin:5px 0;
+  text-decoration:none;
+  border:2px solid #49A34C;
+  background:#96EA8C;
+}
+
+/*** Ribbon ***/
+div.ribbon{
+  position:absolute;
+  right:0;
+  top:0;
+}
+div.ribbon a{
+  border:0;
+}
+div.ribbon img{
+  border:0;
+}
+
+/*** Lightbox ***/
+div.lightbox{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,0.6);
+  display:none;
+  cursor:pointer;
+}
+div.lightbox img{
+    -webkit-box-shadow:none;
+    -moz-box-shadow:none;
+  box-shadow:none;
+}
+
+/*** Animations ***/
+header, section {
+  -webkit-animation-name: fadeIn;
+  -webkit-animation-delay: 0s; 
+  -webkit-animation-duration: 1s;
+}
+section.features{
+  -webkit-animation-delay: 0.1s; 
+}
+section.download{
+  -webkit-animation-delay: 0.2s; 
+}
+section.installation{
+  -webkit-animation-delay: 0.3s; 
+}
+section.advanced{
+  -webkit-animation-delay: 0.4s; 
+}
+section.issues{
+  -webkit-animation-delay: 0.5s; 
+}
+section.code{
+  -webkit-animation-delay: 0.6s; 
+}
+
+@-webkit-keyframes fadeIn{
+  from {
+    opacity: 0; 
+    -webkit-animation-timing-function: ease-out;
+  }
+  25% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 1; 
+    -webkit-animation-timing-function: ease-out;
+  }
+}
+<
